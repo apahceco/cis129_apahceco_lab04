@@ -1,0 +1,46 @@
+'''
+#Author: Anthony Pacheco 
+#Class: CIS 129
+#Project: Lab 04
+#Date: 02/26/2024
+#Discription: This program will ask the user What are your monthly sales? and What is your percent of sales increase? To calculate bonuses for the store and employees.
+#Volume: 1 
+'''
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Asks the user for monthly sales and calculates store bonus amount. lines 11-23
+monthlySales = float(input('What are your monthly sales?\n$')) #Getting the user input in a float so the program won't crash
+
+# If statement to calculate bonus amount 
+if monthlySales > 110000:
+    storeAmount = 6000
+elif monthlySales >= 100000:
+    storeAmount = 5000
+elif monthlySales >= 90000:
+    storeAmount = 4000
+elif monthlySales >= 80000:
+    storeAmount = 3000
+else:
+    storeAmount = 0
+#------------------------------------------------------------------------------------------------------------------------------------------    
+# Asks the user for percent of sales increase to calculate employee bonus. Lines 26-38
+salesIncrease = float(input('What is your percent of sales increase:\n')) #Getting the user input in a float so the program won't crash
+
+salesIncrease = salesIncrease / 100    # This will turn user input into a decimal for calculations for the if statement in lines 31-38
+
+# if statement to calculate employee bonus. 
+if salesIncrease >= 0.05:
+    empAmount = 75
+elif salesIncrease >= 0.04:
+        empAmount = 50 
+elif salesIncrease >= 0.03:
+    empAmount = 40
+else:
+    empAmount = 0
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Display the amounts 
+print('The store bonus is $'+str(storeAmount)+'\n') # calculations for store bonus is done on lines 11-23
+print('The employee\'s bonus amount is $'+str(empAmount)+'\n') #calculations for employees bonus done on lines 26-38
+if storeAmount == 6000 and empAmount == 75:
+    print('Congrates! You have reached the highest bonus amounts possible!')
+
+#------------------------------------------------------------------------------------------------------------------------------------------
